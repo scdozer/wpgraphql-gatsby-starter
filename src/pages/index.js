@@ -1,32 +1,7 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-
-export const pageQuery = graphql`
-  {
-    wordPress {
-      pages {
-        nodes {
-          uri
-          title
-          link
-          id
-        }
-      }
-    }
-  }
-`;
-
-const Home = ({data}) => {
-  const info = data.wordPress.pages.nodes;
-  return (
-    <div>
-      {
-        info.map(infos => {
-          return <h1>{infos.title}<a href={infos.uri}>{infos.title}</a></h1>
-        })
-      }
-     </div>
-  );
-};
-
-export default Home;
+import React from "react"
+import Layout from "../components/Layout"
+export default () => (
+  <Layout>
+    <h1>I’m in a layout!</h1>
+  </Layout>
+)
